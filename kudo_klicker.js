@@ -7,5 +7,40 @@
 
 */
 
+
+// click all kudo buttons on DOM
 document.querySelectorAll('.btn-kudo').forEach((elem) => { elem.click() });
 
+// click kudo buttons for specific athlete
+let superFancyFunction = () => {
+    const athleteToFind = "Mason Rudolph";
+
+    // get all entries on page
+    let entries = document.querySelectorAll('.entity-details');
+
+    // loop through page entries
+    entries.forEach(elem => {
+        // find desired entries
+        if (elem.querySelector('.entry-athlete').innerHTML.includes(athleteToFind)) {
+            elem.querySelector('.btn-kudo').click();
+        }
+    });
+}
+
+
+
+// select all months for activity in year
+document.querySelectorAll('a.bar').forEach( asmonth => {
+    month.click();
+    superFancyFunction()
+});
+
+
+
+
+let getMonths = () => {
+    document.querySelectorAll('a.bar').forEach(month => {
+        console.log(month);
+        setTimeout(getMonths, 2000);
+    });
+}
